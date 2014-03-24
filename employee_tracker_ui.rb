@@ -6,13 +6,16 @@ development_configuration = database_configuration["development"]
 ActiveRecord::Base.establish_connection(development_configuration)
 
 def welcome
-  puts "*"*40, "Employee Tracker Deluxe", "*"*40
-  gets
+  system "clear"
+  puts "\n" + "*"*40, "BINFORD 5100 EMPLOYEE TRACKER", "*"*40
   puts "\n\nPress Enter to Continue\n\n"
+  gets
+  system "clear"
   menu
 end
 
 def menu
+  puts "*"*40, "MAIN MENU", "*"*40
   choice = nil
   until choice == 'x'
     puts  "\n\n\tE: Employees",
@@ -30,8 +33,9 @@ def menu
           when 'x'
             puts "\nGoodbye"
           else
+            system "clear"
             puts "\nThat was an invalid entry. Please try again.\n"
-            menu
+
           end
   end
 end
@@ -105,7 +109,7 @@ end
 
 def all_divisions
   puts "\n\nCompany Divisions:", "-"*40
-  Division.all.each_with_indes do |index, division|
+  Division.all.each_with_index do |index, division|
     puts "\t#{index + 1}." + division.name
   end
 end
