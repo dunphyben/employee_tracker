@@ -117,7 +117,7 @@ end
 def add_new_division
   puts "\nNew Division Name: "
   new_division = gets.chomp
-  division = Division.new(name: division_name)
+  division = Division.new(:name => division.name)
   division.save
   puts "'#{division_name}' has been added as a new division."
 end
